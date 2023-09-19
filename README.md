@@ -31,3 +31,10 @@ docker compose --profile microservices up
 ## Swagger UI
 
 ![Screenshot of Intelli-Mall](https://github.com/LordMoMA/Intelli-Mall/assets/67067729/1e4a4341-4d80-4161-b8a0-cd08b2c7712d.png)
+
+## The monitoring services
+
+<img width="1031" alt="Screenshot 2023-09-20 at 7 43 17 AM" src="https://github.com/LordMoMA/Intelli-Mall/assets/67067729/5f0d72d1-eb6a-4ce4-b842-2f6d4bc50744">
+
+
+
