@@ -1,0 +1,12 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/LordMoMA/Intelli-Mall/internal/jetstream
+    except:
+      - buf.build/googleapis/googleapis
+plugins:
+  - name: go
+    out: .
+    opt:
+      - paths=source_relative
