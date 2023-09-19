@@ -262,13 +262,13 @@ services:
 
   reverse-proxy:
     container_name: proxy
-    platform: linux/arm64/v8
     hostname: proxy
-    image: nginx:alpine
+    image: nginxproxy/nginx-proxy:alpine
     ports:
       - '8080:8080'
     volumes:
       - './docker/nginx.conf:/etc/nginx/nginx.conf'
+      - /var/run/docker.sock:/tmp/docker.sock:ro
     profiles:
       - microservices
   postgres:
