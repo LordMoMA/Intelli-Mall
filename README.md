@@ -34,7 +34,4 @@ docker compose --profile microservices up
 
 ## The monitoring services
 
-<img width="1031" alt="Screenshot 2023-09-20 at 7 43 17 AM" src="https://github.com/LordMoMA/Intelli-Mall/assets/67067729/5f0d72d1-eb6a-4ce4-b842-2f6d4bc50744">
-
-
-
+![Screenshot of Intelli-Mall](https://github.com/LordMoMA/Intelli-Mall/assets/67067729/5f0d72d1-eb6a-4ce4-b842-2f6d4bc50744.png)
