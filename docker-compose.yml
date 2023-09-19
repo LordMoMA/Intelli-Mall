@@ -6,6 +6,7 @@ services:
   #
   monolith:
     container_name: monolith
+    platform: linux/arm64/v8
     hostname: monolith
     image: intellimall-monolith
     build:
@@ -28,6 +29,7 @@ services:
   #
   baskets:
     container_name: baskets
+    platform: linux/arm64/v8
     hostname: baskets
     image: intellimall-baskets
     build:
@@ -52,6 +54,7 @@ services:
     profiles: [ microservices ]
   cosec:
     container_name: cosec
+    platform: linux/arm64/v8
     hostname: cosec
     image: intellimall-cosec
     build:
@@ -77,6 +80,7 @@ services:
       - microservices
   customers:
     container_name: customers
+    platform: linux/arm64/v8
     hostname: customers
     image: intellimall-customers
     build:
@@ -102,6 +106,7 @@ services:
       - microservices
   depot:
     container_name: depot
+    platform: linux/arm64/v8
     hostname: depot
     image: intellimall-depot
     build:
@@ -127,6 +132,7 @@ services:
       - microservices
   notifications:
     container_name: notifications
+    platform: linux/arm64/v8
     hostname: notifications
     image: intellimall-notifications
     build:
@@ -152,6 +158,7 @@ services:
       - microservices
   ordering:
     container_name: ordering
+    platform: linux/arm64/v8
     hostname: ordering
     image: intellimall-ordering
     build:
@@ -177,6 +184,7 @@ services:
       - microservices
   payments:
     container_name: payments
+    platform: linux/arm64/v8
     hostname: payments
     image: intellimall-payments
     build:
@@ -227,6 +235,7 @@ services:
       - microservices
   stores:
     container_name: stores
+    platform: linux/arm64/v8
     hostname: stores
     image: intellimall-stores
     build:
@@ -253,6 +262,7 @@ services:
 
   reverse-proxy:
     container_name: proxy
+    platform: linux/arm64/v8
     hostname: proxy
     image: nginx:alpine
     ports:
@@ -263,6 +273,7 @@ services:
       - microservices
   postgres:
     container_name: postgres
+    platform: linux/arm64/v8
     hostname: postgres
     image: postgres:14-alpine
     restart: always
@@ -275,6 +286,7 @@ services:
       - './docker/database:/docker-entrypoint-initdb.d'
   nats:
     container_name: nats
+    platform: linux/arm64/v8
     hostname: nats
     image: nats:2-alpine
     ports:
@@ -287,8 +299,9 @@ services:
       - 'jsdata:/var/lib/nats/data'
   pact:
     container_name: pact
+    platform: linux/arm64/v8
     hostname: pact
-    image: pactfoundation/pact-broker:2
+    image: pactfoundation/pact-broker:latest-multi
     ports:
       - "9292:9292"
     depends_on:
@@ -319,13 +332,16 @@ services:
 #      - "55679:55679" # zpages extension
   jaeger:
     container_name: jaeger
+    platform: linux/arm64/v8
     hostname: jaeger
-    image: jaegertracing/all-in-one:1
+    image: jaegertracing/all-in-one:latest
+    
     ports:
       - "8081:16686"
       - "14250"
   prometheus:
     container_name: prometheus
+    platform: linux/arm64/v8
     hostname: prometheus
     image: prom/prometheus:v2.37.1
     command: [
@@ -337,6 +353,7 @@ services:
       - "9090:9090"
   grafana:
     container_name: grafana
+    platform: linux/arm64/v8
     hostname: grafana
     image: grafana/grafana:9.0.9
     volumes:
