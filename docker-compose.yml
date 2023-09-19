@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   #
-  # docker compose--profile monolith up
+  # docker compose --profile monolith up
   #
   monolith:
     container_name: monolith
@@ -25,7 +25,7 @@ services:
     profiles: [ monolith ]
 
   #
-  # docker compose--profile microservices up
+  # docker compose --profile microservices up
   #
   baskets:
     container_name: baskets
