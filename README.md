@@ -23,3 +23,12 @@ docker compose --profile microservices up
 ```
 
 > Note: my local machine is Mac M2 ARM64, be sure to locate the docker image with the tag version compatible with your machine architecture.
+
+## Docker Compose with either a monolith or microservices
+<img width="1047" alt="Screenshot 2023-09-20 at 6 33 01 AM" src="https://github.com/LordMoMA/Intelli-Mall/assets/67067729/dec1b2ff-57a5-4966-80b8-7a1e74ad748f">
+
+
+## Swagger UI 
+<img width="1613" alt="Screenshot 2023-09-20 at 6 36 53 AM" src="https://github.com/LordMoMA/Intelli-Mall/assets/67067729/1e4a4341-4d80-4161-b8a0-cd08b2c7712d">
+
+
