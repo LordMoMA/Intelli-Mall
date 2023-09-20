@@ -200,3 +200,56 @@ How much activity you see in the dashboard will depend on how many clients you h
 ![Screenshot of OpenTelemetry Collector dashboard](https://github.com/LordMoMA/Intelli-Mall/assets/67067729/7393a06d-de86-4575-b0d6-2359a5deb957 "Screenshot of OpenTelemetry Collector dashboard")
 
 Details about how much work the collector is doing.
+
+## How does Terminal reflect the events:
+
+```bash
+grafana        | logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-09-20T12:06:26.480212513Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=172.18.0.1 time_ms=21 duration=21.768709ms size=99 referer="http://localhost:3000/d/Pc9ixd4Vk/application?orgId=1&refresh=30s" traceID=00000000000000000000000000000000
+grafana        | logger=tsdb.prometheus t=2023-09-20T12:06:26.480478722Z level=error msg="Range query failed" query=increase(baskets_baskets_started_count[1m15s]) err="Post \"http://prometheus:9090/api/v1/query_range\": context canceled"
+grafana        | logger=tsdb.prometheus t=2023-09-20T12:06:26.48066118Z level=error msg="Range query failed" query=increase(baskets_baskets_checked_out_count[1m15s]) err="Post \"http://prometheus:9090/api/v1/query_range\": context canceled"
+grafana        | logger=tsdb.prometheus t=2023-09-20T12:06:26.480724055Z level=error msg="Range query failed" query=increase(baskets_baskets_canceled_count[1m15s]) err="Post \"http://prometheus:9090/api/v1/query_range\": context canceled"
+grafana        | logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-09-20T12:06:26.480756722Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=172.18.0.1 time_ms=5 duration=5.706083ms size=269 referer="http://localhost:3000/d/Pc9ixd4Vk/application?orgId=1&refresh=30s" traceID=00000000000000000000000000000000
+grafana        | logger=tsdb.prometheus t=2023-09-20T12:06:26.48107043Z level=error msg="Range query failed" query=increase(customers_received_messages_count[1m15s]) err="Post \"http://prometheus:9090/api/v1/query_range\": context canceled"
+grafana        | logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-09-20T12:06:26.48126368Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=172.18.0.1 time_ms=20 duration=20.58625ms size=99 referer="http://localhost:3000/d/Pc9ixd4Vk/application?orgId=1&refresh=30s" traceID=00000000000000000000000000000000
+grafana        | logger=tsdb.prometheus t=2023-09-20T12:06:26.481415138Z level=error msg="Range query failed" query=increase(customers_sent_messages_count[1m15s]) err="Post \"http://prometheus:9090/api/v1/query_range\": context canceled"
+grafana        | logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-09-20T12:06:26.481455638Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=172.18.0.1 time_ms=22 duration=22.907417ms size=99 referer="http://localhost:3000/d/Pc9ixd4Vk/application?orgId=1&refresh=30s" traceID=00000000000000000000000000000000
+grafana        | logger=tsdb.prometheus t=2023-09-20T12:06:26.48437593Z level=error msg="Range query failed" query=increase(stores_sent_messages_count[1m15s]) err="Post \"http://prometheus:9090/api/v1/query_range\": context canceled"
+grafana        | logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-09-20T12:06:26.484744847Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=172.18.0.1 time_ms=3 duration=3.860542ms size=99 referer="http://localhost:3000/d/Pc9ixd4Vk/application?orgId=1&refresh=30s" traceID=00000000000000000000000000000000
+grafana        | logger=tsdb.prometheus t=2023-09-20T12:06:26.494374805Z level=error msg="Range query failed" query=increase(customers_customers_registered_count[1m15s]) err="Post \"http://prometheus:9090/api/v1/query_range\": context canceled"
+grafana        | logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-09-20T12:06:26.494427097Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=172.18.0.1 time_ms=12 duration=12.560708ms size=99 referer="http://localhost:3000/d/Pc9ixd4Vk/application?orgId=1&refresh=30s" traceID=00000000000000000000000000000000
+collector      | 2023-09-20T12:12:59.978Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 7}
+collector      | 2023-09-20T12:13:00.180Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 24}
+collector      | 2023-09-20T12:13:01.184Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 6}
+collector      | 2023-09-20T12:13:04.809Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 3}
+collector      | 2023-09-20T12:13:05.210Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 12}
+collector      | 2023-09-20T12:13:05.814Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 7}
+collector      | 2023-09-20T12:13:06.219Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 2}
+collector      | 2023-09-20T12:13:09.841Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 1}
+collector      | 2023-09-20T12:13:10.245Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 11}
+collector      | 2023-09-20T12:13:10.848Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 5}
+collector      | 2023-09-20T12:13:14.875Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 3}
+collector      | 2023-09-20T12:13:15.278Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 12}
+collector      | 2023-09-20T12:13:15.882Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 4}
+collector      | 2023-09-20T12:13:16.285Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 2}
+collector      | 2023-09-20T12:13:19.908Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 3}
+collector      | 2023-09-20T12:13:20.310Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 14}
+collector      | 2023-09-20T12:13:21.113Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 1}
+collector      | 2023-09-20T12:13:24.935Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 2}
+collector      | 2023-09-20T12:13:25.137Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 22}
+collector      | 2023-09-20T12:13:26.142Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 5}
+collector      | 2023-09-20T12:13:26.546Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 4}
+collector      | 2023-09-20T12:13:29.968Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 3}
+collector      | 2023-09-20T12:13:30.169Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 20}
+collector      | 2023-09-20T12:13:31.181Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 3}
+collector      | 2023-09-20T12:13:34.802Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 3}
+collector      | 2023-09-20T12:13:35.204Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 20}
+collector      | 2023-09-20T12:13:35.806Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 12}
+collector      | 2023-09-20T12:13:36.207Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 6}
+collector      | 2023-09-20T12:13:39.836Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 1}
+collector      | 2023-09-20T12:13:40.240Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 13}
+collector      | 2023-09-20T12:13:40.842Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 2}
+collector      | 2023-09-20T12:13:41.244Z       info    TracesExporter  {"kind": "exporter", "data_type": "traces", "name": "logging", "#spans": 2}
+grafana        | logger=live t=2023-09-20T12:18:33.088289544Z level=info msg="Initialized channel handler" channel=grafana/dashboard/uid/BKf2sowmj address=grafana/dashboard/uid/BKf2sowmj
+prometheus     | ts=2023-09-20T13:04:51.975Z caller=compact.go:519 level=info component=tsdb msg="write block" mint=1695204291419 maxt=1695211200000 ulid=01HASB306VTMA1K6NRP5ZCCEQ3 duration=44.237792ms
+prometheus     | ts=2023-09-20T13:04:51.978Z caller=head.go:842 level=info component=tsdb msg="Head GC completed" duration=2.063209ms
+```
