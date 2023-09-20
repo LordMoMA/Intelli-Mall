@@ -186,3 +186,22 @@ We also have the metrics to check out in Prometheus at `http://localhost:9090`
 ## Searching for the received messages counts for the cosec service
 
 ![Screenshot of received messages counts for the cosec service](https://github.com/LordMoMA/Intelli-Mall/assets/67067729/790cdfd8-405a-4d66-a79d-ee5670724be0 "Screenshot of received messages counts for the cosec service")
+
+## Grafana UI for more compelling intepretation - Intelli Mall App Dashboard
+
+Opening `localhost:3000/` and then browsing for dashboards will show the two dashboards that are installed under the MallBots folder. 
+
+<img width="1627" alt="Screenshot 2023-09-20 at 8 15 04 PM" src="https://github.com/LordMoMA/Intelli-Mall/assets/67067729/03e64fbc-6eff-40ee-a89b-9e3d8a13771f">
+
+How much activity you see in the dashboard will depend on how many clients you have running in the busywork application and the random interactions that the clients are performing.
+
+## OpenTelemetry Collector dashboard
+
+<img width="1631" alt="Screenshot 2023-09-20 at 8 19 13 PM" src="https://github.com/LordMoMA/Intelli-Mall/assets/67067729/7393a06d-de86-4575-b0d6-2359a5deb957">
+
+Details about how much work the collector is doing.
+
+
+
+
+
