@@ -165,10 +165,15 @@ You can increase the number of clients by passing in the -clients=n flag, with a
 
 Open http:// localhost:8081 in your browser to open Jaeger.
 
+<img width="1630" alt="Screenshot 2023-09-20 at 8 01 16 AM" src="https://github.com/LordMoMA/Intelli-Mall/assets/67067729/9d1c3d63-da20-46ae-ad69-396fbbb7c350">
+
 ## Traces that involved the baskets service
 
+<img width="1619" alt="Screenshot 2023-09-20 at 8 00 39 AM" src="https://github.com/LordMoMA/Intelli-Mall/assets/67067729/8bed563c-b362-425a-8532-b324a8a1ad8b">
 
 ## Viewing the monitoring data
+
+<img width="1635" alt="Screenshot 2023-09-20 at 8 03 03 AM" src="https://github.com/LordMoMA/Intelli-Mall/assets/67067729/fe008c04-aca7-4189-a204-3408484e6d02">
 
 Clicking on one of the rows in the graph will provide you with additional details. 
 
@@ -176,5 +181,11 @@ Clicking on one of the rows in the graph will provide you with additional detail
 
 We also have the metrics to check out in Prometheus at `http://localhost:9090`
 
+<img width="1631" alt="Screenshot 2023-09-20 at 8 07 11 AM" src="https://github.com/LordMoMA/Intelli-Mall/assets/67067729/231d151b-cd4c-4978-b2eb-519452832f44">
+
 ## Searching for the received messages counts for the cosec service
+
+<img width="1632" alt="Screenshot 2023-09-20 at 8 08 01 AM" src="https://github.com/LordMoMA/Intelli-Mall/assets/67067729/790cdfd8-405a-4d66-a79d-ee5670724be0">
+
+
 
