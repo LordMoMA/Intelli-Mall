@@ -276,10 +276,11 @@ prometheus     | ts=2023-09-20T13:04:51.978Z caller=head.go:842 level=info compo
 
 ![async pay invoice](docs/Diagrams/async_pay_invoice.png)
 
-### deduplication flow
-
-![deduplication flow](docs/Diagrams/deduplication_flow.png)
 
 ### create order with domain events
 
 ![create order with domain events](docs/Diagrams/create_order_with_domain_events.png)
+
+<!-- ### deduplication flow
+
+![deduplication flow](docs/Diagrams/deduplication_flow.png) -->
