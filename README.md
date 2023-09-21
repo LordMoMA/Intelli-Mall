@@ -256,7 +256,8 @@ prometheus     | ts=2023-09-20T13:04:51.978Z caller=head.go:842 level=info compo
 
 ## Business logic flow
 
-- **read after write:**
+### read after write
+
 ![read after write](docs/Diagrams/read_after_write.png)
 
 - **transactions:**
