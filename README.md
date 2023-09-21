@@ -253,3 +253,26 @@ grafana        | logger=live t=2023-09-20T12:18:33.088289544Z level=info msg="In
 prometheus     | ts=2023-09-20T13:04:51.975Z caller=compact.go:519 level=info component=tsdb msg="write block" mint=1695204291419 maxt=1695211200000 ulid=01HASB306VTMA1K6NRP5ZCCEQ3 duration=44.237792ms
 prometheus     | ts=2023-09-20T13:04:51.978Z caller=head.go:842 level=info component=tsdb msg="Head GC completed" duration=2.063209ms
 ```
+
+## Business logic flow
+
+- **read after write:**
+![read after write](docs/Diagrams/read_after_write.png)
+
+- **transactions:**
+![transactions](docs/Diagrams/transactions.png)
+
+- **notification ordering:**
+![notification ordering](docs/Diagrams/notification_ordering.png)
+
+- **adding items:**
+![adding items](docs/Diagrams/adding_items.png)
+
+- **async pay invoice**
+![async pay invoice](docs/Diagrams/async_pay_invoice.png)
+
+- **deduplication flow:**
+![deduplication flow](docs/Diagrams/deduplication_flow.png)
+
+- **create order with domain events:**
+![create order with domain events](docs/Diagrams/create_order_with_domain_events.png)
