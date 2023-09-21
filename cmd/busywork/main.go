@@ -43,9 +43,11 @@ func run() error {
 
 	wait := waiter.New(waiter.CatchSignals())
 
-	rand.Seed(time.Now().UnixNano())
+	source := rand.NewSource(time.Now().UnixNano())
+	random := rand.New(source)
+
 	for i := 0; i < *clients; i++ {
-		jitter := time.Duration(rand.Int63n(int64(3 * time.Second)))
+		jitter := time.Duration(random.Int63n(int64(3 * time.Second)))
 		interval := 8*time.Second + jitter
 		wait.Add(newBusyworkClient(fmt.Sprintf("Client %d", i+1), interval).run)
 	}
