@@ -260,20 +260,26 @@ prometheus     | ts=2023-09-20T13:04:51.978Z caller=head.go:842 level=info compo
 
 ![read after write](docs/Diagrams/read_after_write.png)
 
-- **transactions:**
+### transactions
+
 ![transactions](docs/Diagrams/transactions.png)
 
-- **notification ordering:**
+### notification ordering
+
 ![notification ordering](docs/Diagrams/notification_ordering.png)
 
-- **adding items:**
+### adding items
+
 ![adding items](docs/Diagrams/adding_items.png)
 
-- **async pay invoice**
+### async pay invoice
+
 ![async pay invoice](docs/Diagrams/async_pay_invoice.png)
 
-- **deduplication flow:**
+### deduplication flow
+
 ![deduplication flow](docs/Diagrams/deduplication_flow.png)
 
-- **create order with domain events:**
+### create order with domain events
+
 ![create order with domain events](docs/Diagrams/create_order_with_domain_events.png)
