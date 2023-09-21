@@ -189,7 +189,7 @@ We also have the metrics to check out in Prometheus at `http://localhost:9090`
 
 ## Grafana UI for more compelling intepretation - Intelli Mall App Dashboard
 
-Opening `localhost:3000/` and then browsing for dashboards will show the two dashboards that are installed under the MallBots folder.
+Opening `localhost:3000/` and then browsing for dashboards will show the two dashboards that are installed under the intellimall folder.
 
 ![Screenshot of OpenTelemetry Collector dashboard](https://github.com/LordMoMA/Intelli-Mall/assets/67067729/03e64fbc-6eff-40ee-a89b-9e3d8a13771f "Screenshot of OpenTelemetry Collector dashboard")
 
