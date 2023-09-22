@@ -4,6 +4,7 @@ import (
 	"context"
 )
 
+// used in testing code to simulate different scenarios
 type FakeBasketRepository struct {
 	baskets map[string]*Basket
 }
