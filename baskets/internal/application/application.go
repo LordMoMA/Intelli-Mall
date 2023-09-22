@@ -57,6 +57,7 @@ type (
 	}
 )
 
+// a compile-time check to ensure that the Application struct correctly implements the App interface by providing implementations for all the required methods
 var _ App = (*Application)(nil)
 
 func New(baskets domain.BasketRepository, stores domain.StoreRepository, products domain.ProductRepository, publisher ddd.EventPublisher[ddd.Event]) *Application {
