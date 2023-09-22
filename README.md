@@ -4,9 +4,7 @@
 
 ![Intelli-Mall Architecture](https://github.com/LordMoMA/Intelli-Mall/assets/67067729/097cfc9d-8d45-48fc-afda-a052d03eb96a.png)
 
-## Tree Structure of IntelliMall
-
-[Tree Structure](docs/ADL/0003-structure-of-intellimall.md)
+## [View Tree Structure of IntelliMall](docs/ADL/0003-structure-of-intellimall.md)
 
 ## Intelli-Mall AWS Architecture
 
