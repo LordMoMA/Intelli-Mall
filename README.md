@@ -4,6 +4,10 @@
 
 ![Intelli-Mall Architecture](https://github.com/LordMoMA/Intelli-Mall/assets/67067729/097cfc9d-8d45-48fc-afda-a052d03eb96a.png)
 
+## Tree Structure of IntelliMall
+
+[Tree Structure](docs/ADL/0003-structure-of-intellimall.md)
+
 ## Intelli-Mall AWS Architecture
 
 ![Intelli-Mall AWS Architecture](https://github.com/LordMoMA/Intelli-Mall/assets/67067729/176f52d6-8bf4-4bb4-bdb6-15ea9ef5a836.png)
@@ -153,7 +157,3 @@ prometheus     | ts=2023-09-20T13:04:51.975Z caller=compact.go:519 level=info co
 <!-- ### deduplication flow
 
 ![deduplication flow](docs/Diagrams/deduplication_flow.png) -->
-
-## Tree Structure of IntelliMall
-
-[Tree Structure](docs/ADL/0003-structure-of-intellimall.md)
