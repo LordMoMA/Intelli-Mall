@@ -6,6 +6,9 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
+// a wrapper type that adds instrumentation to an existing App implementation.
+// The purpose of the instrumentedApp type is to track metrics related to the usage of the App implementation,
+// such as the number of baskets that are started, checked out, or canceled.
 type instrumentedApp struct {
 	App
 	basketsStarted    prometheus.Counter
