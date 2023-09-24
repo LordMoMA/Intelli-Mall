@@ -27,6 +27,7 @@ func (m Module) Startup(ctx context.Context, mono system.Service) (err error) {
 	return Root(ctx, mono)
 }
 
+// composition root is the part of an application where you bring the infrastructure, configuration, and application components together
 func Root(ctx context.Context, svc system.Service) (err error) {
 	// setup Driven adapters
 	reg := registry.New()
