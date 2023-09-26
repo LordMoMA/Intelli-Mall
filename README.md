@@ -26,6 +26,18 @@ docker compose --profile microservices up
 
 > Note: my local machine is Mac M2 ARM64, be sure to locate the docker image with the tag version compatible with your machine architecture.
 
+## How to generate `.pb.go` files for the microservices
+
+let's take baskets microservice for example:
+
+```bash
+cd baskets && go generate
+```
+
+`buf generate` inside the `generate.go` file will generate based on what is configured in the `buf.gen.yaml` file.
+
+> Note: mockery tool in the Makefile `@go install github.com/vektra/mockery/v2@latest` will generate files starting with `mock_` that contains a mock implementation of the BasketServiceClient interface defined in the basketspb package. The mock implementation allows you to test your code in isolation from the real implementation of the BasketServiceClient interface, making it easier to test and debug your code.
+
 ## Docker Compose with either a monolith or microservices
 
 ![Screenshot of Intelli-Mall](https://github.com/LordMoMA/Intelli-Mall/assets/67067729/dec1b2ff-57a5-4966-80b8-7a1e74ad748f.png)
