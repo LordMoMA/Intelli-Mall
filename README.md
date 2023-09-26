@@ -38,6 +38,8 @@ cd baskets && go generate
 
 > Note: mockery tool in the Makefile `@go install github.com/vektra/mockery/v2@latest` will generate files starting with `mock_` that contains a mock implementation of the BasketServiceClient interface defined in the basketspb package. The mock implementation allows you to test your code in isolation from the real implementation of the BasketServiceClient interface, making it easier to test and debug your code.
 
+For more info on using `buf`, please go to [buf tutorial](https://buf.build/docs/tutorials/getting-started-with-buf-cli#clone-the-git-repository)
+
 ## Docker Compose with either a monolith or microservices
 
 ![Screenshot of Intelli-Mall](https://github.com/LordMoMA/Intelli-Mall/assets/67067729/dec1b2ff-57a5-4966-80b8-7a1e74ad748f.png)
