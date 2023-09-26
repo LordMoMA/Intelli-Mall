@@ -28,6 +28,8 @@ import (
 	"github.com/LordMoMA/Intelli-Mall/payments/paymentspb"
 )
 
+// cosec is short for Create-Order-Saga-Execution-Coordinator
+
 type Module struct{}
 
 func (Module) Startup(ctx context.Context, mono system.Service) (err error) {
