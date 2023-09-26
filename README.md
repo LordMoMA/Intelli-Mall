@@ -28,7 +28,7 @@ docker compose --profile microservices up
 
 ## How to generate `.pb.go` files for the microservices
 
-let's take baskets microservice for example:
+let's take baskets microservice for example, once you have your `.proto` files like `api.proto` and `events.proto` specified in basketspb folder:
 
 ```bash
 cd baskets && go generate
