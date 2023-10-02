@@ -145,6 +145,8 @@ func TestApplication_AddItem(t *testing.T) {
 	}
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
+			// Arrange-Act-Assert (AAA) pattern
+			// Arrange
 			m := mocks{
 				baskets:   domain.NewMockBasketRepository(t),
 				stores:    domain.NewMockStoreRepository(t),
@@ -155,7 +157,7 @@ func TestApplication_AddItem(t *testing.T) {
 			if tt.on != nil {
 				tt.on(m)
 			}
-
+			// Act and Assert
 			if err := a.AddItem(tt.args.ctx, tt.args.add); (err != nil) != tt.wantErr {
 				t.Errorf("AddItem() error = %v, wantErr %v", err, tt.wantErr)
 			}

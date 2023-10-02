@@ -38,6 +38,7 @@ func (m *Module) Startup(ctx context.Context, mono system.Service) (err error) {
 }
 
 func Root(ctx context.Context, svc system.Service) (err error) {
+	// Container Setup: Create a dependency injection container.
 	container := di.New()
 	// setup Driven adapters
 	container.AddSingleton(constants.RegistryKey, func(c di.Container) (any, error) {
@@ -115,7 +116,7 @@ func Root(ctx context.Context, svc system.Service) (err error) {
 		), nil
 	})
 	// Prometheus counters
-	basketsStarted := promauto.NewCounter(prometheus.CounterOpts{
+	var basketsStarted = promauto.NewCounter(prometheus.CounterOpts{
 		Name: constants.BasketsStartedCount,
 	})
 	basketsCheckedOut := promauto.NewCounter(prometheus.CounterOpts{
@@ -126,14 +127,16 @@ func Root(ctx context.Context, svc system.Service) (err error) {
 	})
 
 	// setup application
+	// Injecting dependencies into the application.
 	container.AddScoped(constants.ApplicationKey, func(c di.Container) (any, error) {
 		return application.NewInstrumentedApp(application.New(
-			c.Get(constants.BasketsRepoKey).(domain.BasketRepository),
-			c.Get(constants.StoresRepoKey).(domain.StoreCacheRepository),
-			c.Get(constants.ProductsRepoKey).(domain.ProductCacheRepository),
-			c.Get(constants.DomainDispatcherKey).(*ddd.EventDispatcher[ddd.Event]),
+			c.Get(constants.BasketsRepoKey).(domain.BasketRepository),              // Inject BasketRepository.
+			c.Get(constants.StoresRepoKey).(domain.StoreCacheRepository),           // Inject StoreCacheRepository.
+			c.Get(constants.ProductsRepoKey).(domain.ProductCacheRepository),       // Inject ProductCacheRepository.
+			c.Get(constants.DomainDispatcherKey).(*ddd.EventDispatcher[ddd.Event]), // Inject EventDispatcher.
 		), basketsStarted, basketsCheckedOut, basketsCanceled), nil
 	})
+	// Injecting dependencies into event handlers.
 	container.AddScoped(constants.DomainEventHandlersKey, func(c di.Container) (any, error) {
 		return handlers.NewDomainEventHandlers(c.Get(constants.EventPublisherKey).(am.EventPublisher)), nil
 	})
