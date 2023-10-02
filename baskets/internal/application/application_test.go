@@ -13,6 +13,63 @@ import (
 	"github.com/LordMoMA/Intelli-Mall/internal/es"
 )
 
+func TestApplication_AddItem2(t *testing.T) {
+	product := &domain.Product{
+		ID:      "product-id",
+		StoreID: "store-id",
+		Name:    "product-name",
+		Price:   10.00,
+	}
+	store := &domain.Store{
+		ID:   "store-id",
+		Name: "store-name",
+	}
+
+	// Create instances of the generated mocks
+	baskets := new(domain.MockBasketRepository)
+	stores := new(domain.MockStoreRepository)
+	products := new(domain.MockProductRepository)
+	publisher := new(ddd.MockEventPublisher[ddd.Event])
+
+	// Set up the application with the generated mocks
+	a := New(baskets, stores, products, publisher)
+
+	// Define test input
+	ctx := context.Background()
+	add := AddItem{
+		ID:        "basket-id",
+		ProductID: "product-id",
+		Quantity:  1,
+	}
+
+	// Set up expectations for the mocks
+	baskets.On("Load", ctx, "basket-id").Return(&domain.Basket{
+		Aggregate:  es.NewAggregate("basket-id", domain.BasketAggregate),
+		CustomerID: "customer-id",
+		PaymentID:  "payment-id",
+		Items:      make(map[string]domain.Item),
+		Status:     domain.BasketIsOpen,
+	}, nil)
+
+	products.On("Find", ctx, "product-id").Return(product, nil)
+	stores.On("Find", ctx, "store-id").Return(store, nil)
+	baskets.On("Save", ctx, mock.AnythingOfType("*domain.Basket")).Return(nil)
+
+	// Call the function being tested
+	err := a.AddItem(ctx, add)
+
+	// Assert the result
+	if err != nil {
+		t.Errorf("AddItem() error = %v, wantErr false", err)
+	}
+
+	// Assert that the expectations for the mocks were met
+	baskets.AssertExpectations(t)
+	products.AssertExpectations(t)
+	stores.AssertExpectations(t)
+	publisher.AssertExpectations(t)
+}
+
 func TestApplication_AddItem(t *testing.T) {
 	product := &domain.Product{
 		ID:      "product-id",
