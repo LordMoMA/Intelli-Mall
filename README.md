@@ -1,4 +1,4 @@
-# RetailMatrix: Autonomous Commerce System
+# Intelli-Mall: Autonomous Commerce System
 
 ## High-level view of the components
 
